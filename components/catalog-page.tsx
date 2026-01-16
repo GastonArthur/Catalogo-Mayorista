@@ -230,59 +230,83 @@ export function CatalogPage() {
                     <span className="hidden sm:inline">¿Cómo comprar?</span>
                   </button>
                 </DialogTrigger>
-                <DialogContent className="max-w-md sm:max-w-lg max-h-[90vh] overflow-y-auto">
-                  <DialogHeader>
-                    <DialogTitle className="text-xl sm:text-2xl font-bold text-center mb-4">
-                      🔎 ¿Cómo usar el catálogo?
-                    </DialogTitle>
-                  </DialogHeader>
-                  <div className="text-left space-y-4 text-foreground text-sm sm:text-base">
-                    <div className="space-y-2">
-                      <p className="font-medium">Sigue estos pasos simples:</p>
-                      <ul className="space-y-2 list-none">
-                        <li>1️⃣ Usá los filtros o navega por la web para buscar lo que necesitás.</li>
-                        <li>2️⃣ Agregá los productos al carrito.</li>
-                        <li>3️⃣ Cuando termines, tocá el botón verde “Copiar carrito”.</li>
-                        <li>4️⃣ Volvé a WhatsApp y pegá acá tu pedido.</li>
-                      </ul>
+                <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto p-0 gap-0 bg-gray-50/50 backdrop-blur-xl border-white/20">
+                  <div className="p-6 bg-white rounded-t-lg">
+                    <DialogHeader>
+                      <DialogTitle className="text-2xl font-black text-center mb-2 flex items-center justify-center gap-2 text-slate-800">
+                        <Info className="w-6 h-6 text-blue-600" />
+                        ¿Cómo comprar?
+                      </DialogTitle>
+                    </DialogHeader>
+
+                    <div className="mt-6 grid gap-6">
+                      {/* Pasos */}
+                      <div className="space-y-3">
+                        <h3 className="font-bold text-slate-800 flex items-center gap-2">
+                          <span className="flex items-center justify-center w-6 h-6 rounded-full bg-slate-100 text-slate-600 text-xs">
+                            1
+                          </span>
+                          Pasos para comprar
+                        </h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 text-sm text-slate-600">
+                            <span className="font-bold text-slate-800 block mb-1">🔍 Buscar</span>
+                            Usá los filtros o el buscador para encontrar tus productos.
+                          </div>
+                          <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 text-sm text-slate-600">
+                            <span className="font-bold text-slate-800 block mb-1">🛒 Agregar</span>
+                            Sumá los productos que quieras al carrito.
+                          </div>
+                          <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 text-sm text-slate-600">
+                            <span className="font-bold text-slate-800 block mb-1">📋 Copiar</span>
+                            Tocá el botón verde "Copiar carrito" al finalizar.
+                          </div>
+                          <div className="bg-slate-50 p-3 rounded-xl border border-slate-100 text-sm text-slate-600">
+                            <span className="font-bold text-slate-800 block mb-1">💬 Enviar</span>
+                            Pegá el pedido en WhatsApp para confirmar.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-6 bg-slate-50 rounded-b-lg space-y-4">
+                    {/* Accesorios */}
+                    <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                      <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+                        <span className="text-xl">🧢</span> Accesorios
+                      </h3>
+                      <p className="text-sm text-slate-600 mb-2">
+                        Compra mínima mayorista:{" "}
+                        <span className="font-bold text-blue-600">20 unidades</span> (surtido).
+                      </p>
+                      <div className="bg-blue-50 text-blue-800 text-xs p-2 rounded-lg border border-blue-100">
+                        👉 Menos de 20 unidades = precio unitario más alto. Al llegar a 20, se
+                        ajusta automáticamente.
+                      </div>
                     </div>
 
-                    <div className="border-t border-border pt-4 mt-4">
-                      <h3 className="font-bold text-lg mb-2 flex items-center gap-2">
-                        <span>🧢</span> Accesorios
+                    {/* Pelotas */}
+                    <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                      <h3 className="font-bold text-slate-800 mb-2 flex items-center gap-2">
+                        <span className="text-xl">🎾</span> Pelotas
                       </h3>
-                      <ul className="list-disc pl-5 space-y-2">
-                        <li>
-                          La compra mínima para precio mayorista es de{" "}
-                          <span className="font-bold">20 unidades</span> (podés surtir modelos y
-                          productos).
-                        </li>
-                        <li className="text-muted-foreground text-xs sm:text-sm">
-                          👉 Si agregás menos de 20, el sistema muestra precio unitario más alto; al
-                          llegar a 20 accesorios, el precio se ajusta automáticamente.
-                        </li>
-                      </ul>
-                    </div>
-
-                    <div className="border-t border-border pt-4 mt-4">
-                      <h3 className="font-bold text-lg mb-2 flex items-center gap-2">
-                        <span>🎾</span> Pelotas
-                      </h3>
-                      <ul className="list-disc pl-5 space-y-2">
-                        <li>
-                          Se venden{" "}
-                          <span className="font-bold text-red-600">EXCLUSIVAMENTE POR CAJA</span>.
-                        </li>
-                        <li>
-                          El stock que ves corresponde a <span className="italic">tubos</span>.
-                        </li>
-                        <li className="bg-muted p-3 rounded-md mt-2 text-xs sm:text-sm">
-                          <span className="font-semibold">Ejemplo:</span>
-                          <br />
-                          – Stock 700 = 700 tubos disponibles
-                          <br />– En el carrito: 1 unidad = 1 caja
-                        </li>
-                      </ul>
+                      <p className="text-sm text-slate-600 mb-2">
+                        Venta <span className="font-bold text-red-600">EXCLUSIVAMENTE POR CAJA</span>.
+                      </p>
+                      <p className="text-sm text-slate-600 mb-3">
+                        Stock visible = <span className="italic">tubos individuales</span>.
+                      </p>
+                      <div className="bg-orange-50 text-orange-800 text-xs p-3 rounded-lg border border-orange-100">
+                        <span className="font-bold block mb-1">Ejemplo:</span>
+                        <ul className="list-disc pl-4 space-y-0.5">
+                          <li>Stock 700 = 700 tubos disponibles</li>
+                          <li>
+                            En el carrito:{" "}
+                            <span className="font-bold">1 unidad = 1 caja x 24 tubos</span>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </DialogContent>
