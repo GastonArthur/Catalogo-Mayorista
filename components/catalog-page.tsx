@@ -6,7 +6,14 @@ import { type Product, fetchProductsFromSheets } from "@/lib/google-sheets"
 import { ProductCard } from "@/components/product-card"
 import { CartDrawer } from "@/components/cart-drawer"
 import { useCart } from "@/context/cart-context"
-import { Search, Eye, EyeOff, ShoppingCart } from "lucide-react"
+import { Search, Eye, EyeOff, ShoppingCart, Info } from "lucide-react"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 
 type PriceSortOrder = "default" | "asc" | "desc"
 
@@ -216,6 +223,71 @@ export function CatalogPage() {
             </button>
 
             <div className="flex items-center gap-2 sm:gap-3">
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 transition text-sm font-medium">
+                    <Info className="w-4 h-4" />
+                    <span className="hidden sm:inline">¿Cómo comprar?</span>
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="max-w-md sm:max-w-lg max-h-[90vh] overflow-y-auto">
+                  <DialogHeader>
+                    <DialogTitle className="text-xl sm:text-2xl font-bold text-center mb-4">
+                      🔎 ¿Cómo usar el catálogo?
+                    </DialogTitle>
+                  </DialogHeader>
+                  <div className="text-left space-y-4 text-foreground text-sm sm:text-base">
+                    <div className="space-y-2">
+                      <p className="font-medium">Sigue estos pasos simples:</p>
+                      <ul className="space-y-2 list-none">
+                        <li>1️⃣ Usá los filtros o navega por la web para buscar lo que necesitás.</li>
+                        <li>2️⃣ Agregá los productos al carrito.</li>
+                        <li>3️⃣ Cuando termines, tocá el botón verde “Copiar carrito”.</li>
+                        <li>4️⃣ Volvé a WhatsApp y pegá acá tu pedido.</li>
+                      </ul>
+                    </div>
+
+                    <div className="border-t border-border pt-4 mt-4">
+                      <h3 className="font-bold text-lg mb-2 flex items-center gap-2">
+                        <span>🧢</span> Accesorios
+                      </h3>
+                      <ul className="list-disc pl-5 space-y-2">
+                        <li>
+                          La compra mínima para precio mayorista es de{" "}
+                          <span className="font-bold">20 unidades</span> (podés surtir modelos y
+                          productos).
+                        </li>
+                        <li className="text-muted-foreground text-xs sm:text-sm">
+                          👉 Si agregás menos de 20, el sistema muestra precio unitario más alto; al
+                          llegar a 20 accesorios, el precio se ajusta automáticamente.
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="border-t border-border pt-4 mt-4">
+                      <h3 className="font-bold text-lg mb-2 flex items-center gap-2">
+                        <span>🎾</span> Pelotas
+                      </h3>
+                      <ul className="list-disc pl-5 space-y-2">
+                        <li>
+                          Se venden{" "}
+                          <span className="font-bold text-red-600">EXCLUSIVAMENTE POR CAJA</span>.
+                        </li>
+                        <li>
+                          El stock que ves corresponde a <span className="italic">tubos</span>.
+                        </li>
+                        <li className="bg-muted p-3 rounded-md mt-2 text-xs sm:text-sm">
+                          <span className="font-semibold">Ejemplo:</span>
+                          <br />
+                          – Stock 700 = 700 tubos disponibles
+                          <br />– En el carrito: 1 unidad = 1 caja
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
+
               <button
                 onClick={() => setShowOutOfStock(!showOutOfStock)}
                 className={`hidden sm:flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition text-sm font-medium
