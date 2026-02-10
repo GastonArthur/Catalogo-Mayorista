@@ -295,12 +295,11 @@ export function CatalogPage() {
                         Venta <span className="font-bold text-red-600">EXCLUSIVAMENTE POR CAJA</span>.
                       </p>
                       <p className="text-sm text-slate-600 mb-3">
-                        Stock visible = <span className="italic">tubos individuales</span>.
+                        Stock = <span className="italic">Disponible</span>.
                       </p>
                       <div className="bg-orange-50 text-orange-800 text-xs p-3 rounded-lg border border-orange-100">
                         <span className="font-bold block mb-1">Ejemplo:</span>
                         <ul className="list-disc pl-4 space-y-0.5">
-                          <li>Stock 700 = 700 tubos disponibles</li>
                           <li>
                             En el carrito:{" "}
                             <span className="font-bold">1 unidad = 1 caja x 24 tubos</span>

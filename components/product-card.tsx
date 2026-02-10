@@ -214,7 +214,7 @@ export function ProductCard({ product, images = [], showOutOfStock, priorityImag
 
           {!isOutOfStock && (
             <div className="absolute top-2 sm:top-3 left-2 sm:left-3 bg-green-500 text-white px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold shadow-md z-10">
-              Stock: {product.stock}
+              Stock
             </div>
           )}
           {isOutOfStock && (
