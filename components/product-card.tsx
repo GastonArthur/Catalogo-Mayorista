@@ -145,9 +145,7 @@ export function ProductCard({ product, images = [], showOutOfStock, priorityImag
     <>
       <div
         ref={cardRef}
-        className={`group bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl hover:border-red-200 ${
-          isOutOfStock ? "opacity-50" : ""
-        }`}
+        className="group bg-white border border-gray-200 rounded-xl overflow-hidden flex flex-col h-full transition-all duration-300 hover:shadow-xl hover:border-red-200"
       >
         <div
           ref={imageContainerRef}
@@ -212,16 +210,13 @@ export function ProductCard({ product, images = [], showOutOfStock, priorityImag
             </>
           )}
 
-          {!isOutOfStock && (
-            <div className="absolute top-2 sm:top-3 left-2 sm:left-3 bg-green-500 text-white px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold shadow-md z-10">
-              Stock
-            </div>
-          )}
-          {isOutOfStock && (
-            <div className="absolute inset-0 bg-black/50 flex items-center justify-center backdrop-blur-sm z-20">
-              <span className="text-white font-bold text-base sm:text-lg">Sin Stock</span>
-            </div>
-          )}
+          <div
+            className={`absolute top-2 sm:top-3 left-2 sm:left-3 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold shadow-md z-10 ${
+              isOutOfStock ? "bg-red-500 text-white" : "bg-green-500 text-white"
+            }`}
+          >
+            {isOutOfStock ? "Sin Stock" : `Stock: ${product.stock}`}
+          </div>
         </div>
 
         <div className="p-3 sm:p-4 flex flex-col flex-1">
