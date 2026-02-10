@@ -215,7 +215,7 @@ export function ProductCard({ product, images = [], showOutOfStock, priorityImag
               isOutOfStock ? "bg-red-500 text-white" : "bg-green-500 text-white"
             }`}
           >
-            {isOutOfStock ? "Sin Stock" : `Stock: ${product.stock}`}
+            {isOutOfStock ? "Sin Stock" : "Stock"}
           </div>
         </div>
 
