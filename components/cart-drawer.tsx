@@ -2,8 +2,11 @@
 
 import { useState, useEffect } from "react"
 import { useCart } from "@/context/cart-context"
-import { X, Trash2, Copy, Check, ChevronUp, ChevronDown } from "lucide-react"
+import { X, Trash2, Copy, Check, ChevronUp, ChevronDown, Download } from "lucide-react"
 import Image from "next/image"
+import jsPDF from "jspdf"
+import autoTable from "jspdf-autotable"
+import { NumerosALetras } from "numero-a-letras"
 
 interface CartDrawerProps {
   images?: Record<string, string[]>
@@ -35,6 +38,54 @@ export function CartDrawer({ images }: CartDrawerProps) {
     window.addEventListener("resize", checkMobile)
     return () => window.removeEventListener("resize", checkMobile)
   }, [])
+
+  const handleDownloadPDF = () => {
+    const doc = new jsPDF()
+
+    // Title
+    doc.setFontSize(18)
+    doc.text("Pedido Maycam Games", 14, 22)
+
+    doc.setFontSize(12)
+    doc.text(`Fecha: ${new Date().toLocaleDateString("es-AR")}`, 14, 32)
+
+    // Table Data
+    const tableRows = items.map((item) => {
+      const pricePerUnit = getPricePerUnit(item.product)
+      const subtotal = pricePerUnit * item.quantity
+      return [
+        item.product.sku,
+        item.product.nombre,
+        item.quantity,
+        `$${pricePerUnit.toLocaleString("es-AR")}`,
+        `$${subtotal.toLocaleString("es-AR")}`,
+      ]
+    })
+
+    autoTable(doc, {
+      head: [["SKU", "Producto", "Cant.", "Precio Unit.", "Subtotal"]],
+      body: tableRows,
+      startY: 40,
+      headStyles: { fillColor: [220, 38, 38] },
+    })
+
+    // Total
+    const finalY = (doc as any).lastAutoTable.finalY || 40
+    const total = getTotalPrice()
+
+    doc.setFontSize(12)
+    doc.setFont("helvetica", "bold")
+    doc.text(`Total (SIN IVA): $${total.toLocaleString("es-AR")}`, 14, finalY + 10)
+
+    // Total in text
+    doc.setFontSize(10)
+    doc.setFont("helvetica", "normal")
+    // @ts-ignore
+    const totalText = NumerosALetras(total).replace("M.N.", "").trim()
+    doc.text(`Son: ${totalText}`, 14, finalY + 18)
+
+    doc.save("pedido-maycam.pdf")
+  }
 
   const handleCopyToWhatsApp = () => {
     let text = "Pedido Maycam Games:\n================================\n"
@@ -228,14 +279,24 @@ export function CartDrawer({ images }: CartDrawerProps) {
             Total de unidades: {getTotalItems()}
           </p>
 
-          <button
-            onClick={handleCopyToWhatsApp}
-            disabled={items.length === 0}
-            className="w-full py-2.5 sm:py-3 rounded-lg font-semibold text-sm sm:text-base flex items-center justify-center gap-2 bg-green-500 text-white hover:bg-green-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            <Copy className="w-4 h-4" />
-            Copiar para WhatsApp
-          </button>
+          <div className="grid grid-cols-2 gap-2">
+            <button
+              onClick={handleDownloadPDF}
+              disabled={items.length === 0}
+              className="w-full py-2.5 sm:py-3 rounded-lg font-semibold text-sm sm:text-base flex items-center justify-center gap-2 bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <Download className="w-4 h-4" />
+              Descargar PDF
+            </button>
+            <button
+              onClick={handleCopyToWhatsApp}
+              disabled={items.length === 0}
+              className="w-full py-2.5 sm:py-3 rounded-lg font-semibold text-sm sm:text-base flex items-center justify-center gap-2 bg-green-500 text-white hover:bg-green-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              <Copy className="w-4 h-4" />
+              Copiar WhatsApp
+            </button>
+          </div>
         </div>
       </div>
 
