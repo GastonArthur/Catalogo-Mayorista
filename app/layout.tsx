@@ -7,8 +7,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Maycam Games - Catálogo Mayorista',
-  description: 'Catálogo mayorista de productos Maycam Games',
+  title: 'Maycam Games - Catálogo Mayorista | Plataforma para distribuidores',
+  description: 'Creá y compartí tu catálogo de productos mayoristas con precios, imágenes, tu marca y mucho más. La plataforma más fácil para distribuidores.',
   icons: {
     icon: [
       {
@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
