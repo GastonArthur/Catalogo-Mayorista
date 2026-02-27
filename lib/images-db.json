@@ -5878,5 +5878,68 @@
     "IMG8": "",
     "IMG9": "",
     "IMG10": ""
+  },
+    {
+    "Nombre": "Mochila -- Bullpadel Vertex Geo Azul Intenso Bpm26008",
+    "SKU": 8447552009129,
+    "IMG1": "https://http2.mlstatic.com/D_Q_NP_767334-MLA107573121585_022026-F.webp",
+    "IMG2": "https://http2.mlstatic.com/D_Q_NP_759697-MLA107576501905_022026-F.webp",
+    "IMG3": "https://http2.mlstatic.com/D_Q_NP_800475-MLA106900605228_022026-F.webp",
+    "IMG4": "https://http2.mlstatic.com/D_Q_NP_885627-MLA107577216917_022026-F.webp"
+  },
+    {
+    "Nombre": "Mochila -- Bullpadel Xplo Negro Bpm26022",
+    "SKU": 8447552009228,
+    "IMG1": "https://http2.mlstatic.com/D_Q_NP_961486-MLA107579159839_022026-F.webp",
+    "IMG2": "https://http2.mlstatic.com/D_Q_NP_603013-MLA107577220859_022026-F.webp",
+    "IMG3": "https://http2.mlstatic.com/D_Q_NP_935815-MLA107579605203_022026-F.webp"
+  },
+  {
+    "Nombre": "Mochila -- Bullpadel Vertex Negro Bpm26007",
+    "SKU": 8447552007187,
+    "IMG1": "https://http2.mlstatic.com/D_Q_NP_949784-MLA106900819242_022026-F.webp",
+    "IMG2": "https://http2.mlstatic.com/D_Q_NP_801747-MLA107575793431_022026-F.webp",
+    "IMG3": "https://http2.mlstatic.com/D_Q_NP_932168-MLA106900819248_022026-F.webp"
+  },
+    {
+    "Nombre": "Mochila -- Bullpadel Neuron Bpm26009",
+    "SKU": 8447552009204,
+    "IMG1": "https://http2.mlstatic.com/D_Q_NP_964865-MLA106900821970_022026-F.webp",
+    "IMG2": "https://http2.mlstatic.com/D_Q_NP_917523-MLA106900881996_022026-F.webp",
+    "IMG3": "https://http2.mlstatic.com/D_Q_NP_887309-MLA107579581349_022026-F.webp"
+  },
+    {
+    "Nombre": "Mochila -- Bullpadel Vertex Woman Bpm26009 Blanco",
+    "SKU": 8447552009143,
+    "IMG1": "https://http2.mlstatic.com/D_Q_NP_707496-MLA106902256468_022026-F.webp",
+    "IMG2": "https://http2.mlstatic.com/D_Q_NP_616033-MLA106900327012_022026-F.webp",
+    "IMG3": "https://http2.mlstatic.com/D_Q_NP_939620-MLA106900327014_022026-F.webp"
+  },
+    {
+    "Nombre": "Bolso Paletero -- Bullpadel Icon Bpp26023 Verde",
+    "SKU": 8447552007125,
+    "IMG1": "https://http2.mlstatic.com/D_Q_NP_910961-MLA106891651068_022026-F.webp",
+    "IMG2": "https://http2.mlstatic.com/D_Q_NP_879319-MLA107569543671_022026-F.webp"
+  },
+    {
+    "Nombre": "Bolso Paletero -- Bullpadel Vertex Bpp26003 Negro",
+    "SKU": 8447552006685,
+    "IMG1": "https://http2.mlstatic.com/D_Q_NP_688968-MLA107576493331_022026-F.webp",
+    "IMG2": "https://http2.mlstatic.com/D_Q_NP_977322-MLA106894057052_022026-F.webp",
+    "IMG3": "https://http2.mlstatic.com/D_Q_NP_774056-MLA106892624220_022026-F.webp"
+  },
+      {
+    "Nombre": "Bolso Paletero -- Bullpadel Vertex Woman Azul",
+    "SKU": 8447552006722,
+    "IMG1": "https://http2.mlstatic.com/D_Q_NP_979373-MLA105651721472_012026-F.webp",
+    "IMG2": "https://http2.mlstatic.com/D_Q_NP_659833-MLA105652426294_012026-F.webp",
+    "IMG3": "https://http2.mlstatic.com/D_Q_NP_754082-MLA105651485086_012026-F.webp"
+  },
+        {
+    "Nombre": "Bolso Paletero -- Bullpadel Vertex Geo Bpp26002",
+    "SKU": 8447552006708,
+    "IMG1": "https://http2.mlstatic.com/D_Q_NP_617680-MLA107575752471_022026-F.webp",
+    "IMG2": "https://http2.mlstatic.com/D_Q_NP_942509-MLA107575662713_022026-F.webp",
+    "IMG3": "https://http2.mlstatic.com/D_Q_NP_677350-MLA106898273784_022026-F.webp"
   }
 ]
